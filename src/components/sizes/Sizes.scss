@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../../fonts/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../../fonts/Roboto-Light.ttf");
+}
+* {
+  margin: auto;
+  box-sizing: border-box;
+}
+.size {
+  margin-bottom: -34px;
+  margin-top: 41px;
+  margin-left: 38px;
+  font-family: "Roboto-Bold";
+  font-size: 13px;
+}
+.sizes-container {
+  display: grid;
+  grid-template-columns: repeat(4, 0fr);
+  grid-gap: 11px;
+  margin-top: 50px;
+  margin-left: 35px;
+  .sizes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 29px;
+    height: 29px;
+    font-size: 9px;
+    border-radius: 50%;
+    color: rgb(27, 26, 32);
+    background-color: rgb(236, 236, 236);
+    font-weight: 100;
+    font-family: "Roboto-Light";
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover {
+      border-color: black;
+    }
+  }
+}
+.company-name {
+  margin-left: 38px;
+  margin-top: 20px;
+  font-family: "Roboto-Bold";
+  font-size: 15px;
+}

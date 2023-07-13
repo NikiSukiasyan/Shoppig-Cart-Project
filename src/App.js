@@ -1,5 +1,11 @@
+import Sizes from "./components/sizes/Sizes";
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <Sizes />
+    </>
+  );
 }
 
 export default App;
