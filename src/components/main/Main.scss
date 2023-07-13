@@ -1,0 +1,104 @@
+.products-quantity {
+  margin-left: 223px;
+  margin-top: -140px;
+  font-family: "Roboto-Light";
+  font-size: 13px;
+  display: flex;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 200px;
+
+  img {
+    height: 260px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .title {
+    font-family: "Roboto-Light";
+    font-size: 14px;
+    color: #000;
+    width: 185px;
+    text-align: center;
+    padding-bottom: 11px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background-color: rgb(234, 191, 0);
+    }
+  }
+
+  div {
+    display: grid;
+    gap: 15px;
+    position: relative;
+
+    &:hover {
+      button {
+        background-color: rgb(255, 200, 0);
+      }
+    }
+
+    .shipping {
+      position: absolute;
+      width: 62px;
+      height: 16px;
+      background-color: #000;
+      z-index: 2;
+      left: 573.5px;
+
+      p {
+        font-size: 8px;
+        color: #fff;
+        font-family: "Roboto-Light";
+      }
+    }
+  }
+
+  .price-container {
+    p {
+      font-size: 11px;
+      font-family: "Roboto-Light";
+
+      b {
+        font-size: 18px;
+        font-family: "Roboto-Bold";
+      }
+    }
+
+    span {
+      font-size: 11px;
+      font-family: "Roboto-Light";
+      color: rgb(156, 155, 155);
+      margin-top: -11px;
+
+      b {
+        font-size: 12px;
+        font-family: "Roboto-Medium";
+        color: rgb(156, 155, 155);
+      }
+    }
+  }
+
+  button {
+    background-color: rgb(27, 26, 32);
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    cursor: pointer;
+    width: 170px;
+    height: 40px;
+    border: 0px;
+    transition: background-color 0.2s ease;
+  }
+}

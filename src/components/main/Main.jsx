@@ -1,0 +1,160 @@
+import React, { useState } from "react";
+import "./Main.scss";
+import CroppedStayGroovyoffwhite from "../../images/CroppedStayGroovyoffwhite.png";
+import BasicCactusWhiteTshirt from "../../images/BasicCactusWhiteTshirt.png";
+import SkaterBlackSweatshirt from "../../images/SkaterBlackSweatshirt.png";
+import BlackTuleOversized from "../../images/BlackTuleOversized.png";
+import BlackBatmanTshirt from "../../images/BlackBatmanTshirt.png";
+import BlueTShirt from "../../images/BlueTShirt.png";
+import LooseBlackTshirt from "../../images/LooseBlackTshirt.png";
+import RingerHallPass from "../../images/RingerHallPass.png";
+import GreyTshirt from "../../images/GreyTshirt.png";
+import BlackTshirtwithwhitestripes from "../../images/BlackTshirtwithwhitestripes.png";
+import TurtlesNinjaTshirt from "../../images/TurtlesNinjaTshirt.png";
+import SlimblackTshirt from "../../images/SlimblackTshirt.png";
+import BlueSweatshirt from "../../images/BlueSweatshirt.png";
+import WhiteTshirtGucci from "../../images/WhiteTshirtGucci.png";
+import TropicalWineTshirt from "../../images/TropicalWineTshirt.png";
+import MarineBlueTshirt from "../../images/MarineBlueTshirt.png";
+
+function Main() {
+  const [Products, setProducts] = useState([
+    {
+      id: 1,
+      image: CroppedStayGroovyoffwhite,
+      title: "Cropped Stay Groovy off white",
+      price: "$10.90",
+      orPrice: "or 9 x$1.21",
+    },
+    {
+      id: 2,
+      image: BasicCactusWhiteTshirt,
+      title: "Basic Cactus White T-shirt",
+      price: "$13.25",
+      orPrice: "or 3 x$4.42",
+    },
+    {
+      id: 3,
+      image: SkaterBlackSweatshirt,
+      title: "Skater Black Sweatshirt",
+      price: "$25.90",
+      orPrice: "or 12 x$2.16",
+    },
+    {
+      id: 4,
+      image: BlackTuleOversized,
+      title: "Black Tule Oversized",
+      price: "$29.45",
+      orPrice: "or 5 x$5.89",
+    },
+    {
+      id: 5,
+      image: BlackBatmanTshirt,
+      title: "Black Batman T-shirt",
+      price: "$10.90",
+      orPrice: "or 9 x$1.21",
+    },
+    {
+      id: 6,
+      image: BlueTShirt,
+      title: "Blue T-Shirt",
+      price: "$9.00",
+      orPrice: "or 3 x$3.00",
+    },
+    {
+      id: 7,
+      image: LooseBlackTshirt,
+      title: "Loose Black T-shirt",
+      price: "$14.00",
+      orPrice: "or 5 x$2.80",
+    },
+    {
+      id: 8,
+      image: RingerHallPass,
+      title: "Ringer Hall Pass",
+      price: "$10.90",
+      orPrice: "or 9 x$1.21",
+    },
+    {
+      id: 9,
+      image: GreyTshirt,
+      title: "Grey T-shirt",
+      price: "$14.90",
+      orPrice: "or 7 x$2.13",
+    },
+    {
+      id: 10,
+      image: BlackTshirtwithwhitestripes,
+      title: "Black T-shirt with white stripes",
+      price: "$14.90",
+      orPrice: "or 7 x$2.13",
+    },
+    {
+      id: 11,
+      image: TurtlesNinjaTshirt,
+      title: "Turtles Ninja T-shirt",
+      price: "$10.90",
+      orPrice: "or 9 x$1.21",
+    },
+    {
+      id: 12,
+      image: SlimblackTshirt,
+      title: "Slim black T-shirt",
+      price: "$49.90",
+    },
+    {
+      id: 13,
+      image: BlueSweatshirt,
+      title: "Blue Sweatshirt",
+      price: "$22.50",
+      orPrice: "or 4 x$5.63",
+    },
+    {
+      id: 14,
+      image: WhiteTshirtGucci,
+      title: "White T-shirt Gucci",
+      price: "$18.70",
+      orPrice: "or 4 x$4.67",
+    },
+    {
+      id: 15,
+      image: TropicalWineTshirt,
+      title: "Tropical Wine T-shirt",
+      price: "$134.90",
+      orPrice: "or 5 x$26.98",
+    },
+    {
+      id: 16,
+      image: MarineBlueTshirt,
+      title: "Marine Blue T-shirt",
+      price: "$49.00",
+      orPrice: "or 9 x$5.44",
+    },
+  ]);
+
+  return (
+    <>
+      <p className="products-quantity">{Products.length} Product(s) found</p>
+      <div className="product-container">
+        {Products.map((product) => (
+          <div key={product.id}>
+            <div className="image-container">
+              <img src={product.image} alt={product.title} />
+            </div>
+            <div className="shipping">
+              <p>Free Shipping</p>
+            </div>
+            <p className="title">{product.title}</p>
+            <div className="price-container">
+              <p>{product.price}</p>
+              {product.orPrice && <span>or {product.orPrice}</span>}
+            </div>
+            <button className="add-btn">Add To Cart</button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export default Main;
