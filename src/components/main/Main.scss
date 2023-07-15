@@ -1,6 +1,6 @@
 .products-quantity {
   margin-left: 223px;
-  margin-top: -140px;
+  margin-top: 42px;
   font-family: "Roboto-Light";
   font-size: 13px;
   display: flex;
@@ -8,11 +8,10 @@
 
 .product-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0fr));
   grid-auto-rows: auto;
   margin-left: 200px;
-  margin-top: 20px;
-
+  margin-top: -133px;
   .title {
     font-family: "Roboto-Light";
     font-size: 14px;

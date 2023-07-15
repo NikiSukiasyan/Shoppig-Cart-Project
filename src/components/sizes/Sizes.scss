@@ -16,7 +16,6 @@
 }
 .size {
   margin-bottom: -34px;
-  margin-top: 41px;
   margin-left: 38px;
   font-family: "Roboto-Bold";
   font-size: 13px;
@@ -25,7 +24,7 @@
   display: grid;
   grid-template-columns: repeat(4, 0fr);
   grid-gap: 11px;
-  margin-top: 50px;
+  margin-top: 49px;
   margin-left: 35px;
   .sizes {
     display: flex;
@@ -45,6 +44,10 @@
     &:hover {
       border-color: black;
     }
+  }
+  .sizes.selected {
+    background-color: black;
+    color: #fff;
   }
 }
 .company-name {

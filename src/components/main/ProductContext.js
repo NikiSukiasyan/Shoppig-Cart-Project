@@ -28,6 +28,7 @@ export const ProductProvider = ({ children }) => {
       price: "10",
       cents: ".90",
       orPrice: " 9 x1.21",
+      sizes: ["XXL", "XL", "L"],
     },
     {
       id: 2,
@@ -36,6 +37,7 @@ export const ProductProvider = ({ children }) => {
       price: "13",
       cents: ".25",
       orPrice: " 3 x4.42",
+      sizes: ["L", "ML"],
     },
     {
       id: 3,
@@ -44,6 +46,7 @@ export const ProductProvider = ({ children }) => {
       price: "25",
       cents: ".90",
       orPrice: " 12 x2.16",
+      sizes: ["XL"],
     },
     {
       id: 4,
@@ -52,6 +55,7 @@ export const ProductProvider = ({ children }) => {
       price: "29",
       cents: ".45",
       orPrice: " 5 x5.89",
+      sizes: ["ML", "M"],
     },
     {
       id: 5,
@@ -60,6 +64,7 @@ export const ProductProvider = ({ children }) => {
       price: "10",
       cents: ".90",
       orPrice: " 9 x1.21",
+      sizes: ["S", "XS"],
     },
     {
       id: 6,
@@ -68,6 +73,7 @@ export const ProductProvider = ({ children }) => {
       price: "9",
       cents: ".00",
       orPrice: " 3 x3.00",
+      sizes: ["XL", "L"],
     },
     {
       id: 7,
@@ -76,6 +82,7 @@ export const ProductProvider = ({ children }) => {
       price: "14",
       cents: ".00",
       orPrice: " 5 x2.80",
+      sizes: ["XXL", "XL", "L"],
     },
     {
       id: 8,
@@ -83,6 +90,7 @@ export const ProductProvider = ({ children }) => {
       title: "Ringer Hall Pass",
       price: "10.90",
       orPrice: " 9 x1.21",
+      sizes: ["XXL", "XL", "L"],
     },
     {
       id: 9,
@@ -91,6 +99,7 @@ export const ProductProvider = ({ children }) => {
       price: "14",
       cents: ".90",
       orPrice: " 7 x2.13",
+      sizes: ["L"],
     },
     {
       id: 10,
@@ -99,6 +108,7 @@ export const ProductProvider = ({ children }) => {
       price: "14",
       cents: ".90",
       orPrice: " 7 x2.13",
+      sizes: ["L"],
     },
     {
       id: 11,
@@ -107,6 +117,7 @@ export const ProductProvider = ({ children }) => {
       price: "10",
       cents: ".90",
       orPrice: " 9 x1.21",
+      sizes: ["XL", "L"],
     },
     {
       id: 12,
@@ -115,6 +126,7 @@ export const ProductProvider = ({ children }) => {
       price: "49",
       cents: ".90",
       orPrice: " 9 x5.44",
+      sizes: ["XXL", "XL"],
     },
     {
       id: 13,
@@ -123,6 +135,7 @@ export const ProductProvider = ({ children }) => {
       price: "22",
       cents: ".50",
       orPrice: " 4 x5.63",
+      sizes: ["S"],
     },
     {
       id: 14,
@@ -131,6 +144,7 @@ export const ProductProvider = ({ children }) => {
       price: "18",
       cents: ".70",
       orPrice: " 4 x4.67",
+      sizes: ["XL"],
     },
     {
       id: 15,
@@ -139,6 +153,7 @@ export const ProductProvider = ({ children }) => {
       price: "134",
       cents: ".90",
       orPrice: " 5 x26.98",
+      sizes: ["XL", "L"],
     },
     {
       id: 16,
@@ -147,6 +162,7 @@ export const ProductProvider = ({ children }) => {
       price: "49",
       cents: ".00",
       orPrice: " 9 x5.44",
+      sizes: ["XL", "L"],
     },
   ]);
   return (
