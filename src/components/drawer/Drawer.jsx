@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Drawer.scss";
 import CartImage from "../../images/cartImage.png";
+import CroppedStayGroovyoffwhite from "../../images/CroppedStayGroovyoffwhite.png";
 
 function Drawer() {
   const [isOpen, setIsOpen] = useState(false);
+  const [secondCount, setSecondCount] = useState(1);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -12,9 +14,9 @@ function Drawer() {
   return (
     <div className={`drawer ${isOpen ? "open" : ""}`}>
       <div className="cart-count">
-        <img src={CartImage} />
+        <img src={CartImage} alt="Cart" />
         <p>Cart</p>
-        <div className="second-count">0</div>
+        <div className="second-count">{secondCount}</div>
       </div>
       <button onClick={toggleDrawer} className="open-drawer-btn">
         {isOpen ? (
@@ -22,9 +24,28 @@ function Drawer() {
         ) : (
           <img src={CartImage} alt="Cart" />
         )}
-        {!isOpen && <div className="count">0</div>}
+        {!isOpen && <div className="count">{secondCount}</div>}
       </button>
-      <p className="add-text">Add some products to the cart :)</p>
+      <p className={`add-text ${secondCount > 0 ? "hidden" : ""}`}>
+        Add some products to the cart :)
+      </p>
+      <div className="cart-products-container">
+        <div className="each-product">
+          <img src={CroppedStayGroovyoffwhite} alt="Product" />
+          <div className="product-name">
+            <p>Basic Cactus White T-shirt</p>
+            <div className="product-information">
+              <span>X | Wine</span>
+              <span>Quantity: 2</span>
+            </div>
+            <p className="price">$25.90</p>
+            <div className="button-container">
+              <button>-</button>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="subtotal-container">
         <div>
           <p>SUBTOTAL</p>

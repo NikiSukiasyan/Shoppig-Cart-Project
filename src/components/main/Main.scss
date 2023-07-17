@@ -115,3 +115,23 @@
     color: #000;
   }
 }
+@media (max-width: 600px) {
+  .product-container {
+    margin-left: 4px;
+    margin-top: 52px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product img {
+    width: 150px;
+  }
+  .shipping {
+    right: 10px;
+  }
+  .products-quantity {
+    position: absolute;
+    top: 82px;
+    left: -192px;
+    font-family: "Roboto-Bold";
+  }
+}

@@ -22,7 +22,16 @@ function Main() {
       <div className="product-container">
         {filteredProducts(selectedSizes, products).map((product) => (
           <div key={product.id} className="product">
-            <img src={product.image} alt={product.title} />
+            <img
+              src={product.image}
+              alt={product.title}
+              onMouseOver={(e) => {
+                e.currentTarget.src = product.hoverImage;
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.src = product.image;
+              }}
+            />
             <div className="shipping">
               <p>Free Shipping</p>
             </div>
