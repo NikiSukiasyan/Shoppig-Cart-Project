@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Drawer.scss";
 import CartImage from "../../images/cartImage.png";
+import {
+  initializeQuantities,
+  decreaseQuantity,
+  increaseQuantity,
+  removeProduct,
+  calculateCurrentPrice,
+} from "./Drawer.js";
 
 function Drawer({ cartProducts, setCartProducts }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,62 +16,41 @@ function Drawer({ cartProducts, setCartProducts }) {
   useEffect(() => {
     if (cartProducts.length > 0) {
       setIsOpen(true);
-      initializeQuantities();
+      setQuantities(initializeQuantities(cartProducts));
     }
   }, [cartProducts]);
-
-  const initializeQuantities = () => {
-    const initialQuantities = cartProducts.map((product) => product.quantity);
-    setQuantities(initialQuantities);
-  };
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
 
-  const decreaseQuantity = (index) => {
-    if (quantities[index] > 1) {
-      const updatedQuantities = [...quantities];
-      updatedQuantities[index] = quantities[index] - 1;
-      setQuantities(updatedQuantities);
-    }
+  const handleDecreaseQuantity = (index) => {
+    setQuantities(decreaseQuantity(quantities, index));
   };
 
-  const increaseQuantity = (index) => {
-    const updatedQuantities = [...quantities];
-    updatedQuantities[index] = quantities[index] + 1;
-    setQuantities(updatedQuantities);
+  const handleIncreaseQuantity = (index) => {
+    setQuantities(increaseQuantity(quantities, index));
   };
 
-  const removeProduct = (index) => {
-    const updatedCartProducts = [...cartProducts];
-    updatedCartProducts.splice(index, 1);
-    setCartProducts(updatedCartProducts);
-    setQuantities((prevQuantities) => {
-      const updatedQuantities = [...prevQuantities];
-      updatedQuantities.splice(index, 1);
-      return updatedQuantities;
-    });
+  const handleRemoveProduct = (index) => {
+    removeProduct(
+      cartProducts,
+      setCartProducts,
+      quantities,
+      setQuantities,
+      index
+    );
   };
 
-  const calculateCurrentPrice = () => {
-    let totalPrice = 0;
-    for (let i = 0; i < cartProducts.length; i++) {
-      const product = cartProducts[i];
-      const quantity = quantities[i];
-      totalPrice += product.price * quantity + product.cents * quantity;
-    }
-    return totalPrice.toFixed(2);
-  };
-
-  const checkoutHandler = () => {
+  const handleCheckout = () => {
     if (cartProducts.length === 0) {
       alert("დაამატეთ პროდუქტები კალათაში :)");
     } else {
-      const totalPrice = calculateCurrentPrice();
+      const totalPrice = calculateCurrentPrice(cartProducts, quantities);
       alert(`სულ გადასახდელია $${totalPrice}`);
     }
   };
+
   return (
     <div className={`drawer ${isOpen ? "open" : ""}`}>
       <div className="cart-count">
@@ -93,7 +79,7 @@ function Drawer({ cartProducts, setCartProducts }) {
                 <div className="product-information">
                   <button
                     className="cancel"
-                    onClick={() => removeProduct(index)}
+                    onClick={() => handleRemoveProduct(index)}
                   >
                     x
                   </button>
@@ -108,12 +94,14 @@ function Drawer({ cartProducts, setCartProducts }) {
                 </p>
                 <div className="button-container">
                   <button
-                    onClick={() => decreaseQuantity(index)}
+                    onClick={() => handleDecreaseQuantity(index)}
                     className={quantities[index] <= 1 ? "disabled" : ""}
                   >
                     -
                   </button>
-                  <button onClick={() => increaseQuantity(index)}>+</button>
+                  <button onClick={() => handleIncreaseQuantity(index)}>
+                    +
+                  </button>
                 </div>
               </div>
             </div>
@@ -123,9 +111,9 @@ function Drawer({ cartProducts, setCartProducts }) {
       <div className="subtotal-container">
         <div>
           <p>SUBTOTAL</p>
-          <span>${calculateCurrentPrice()}</span>
+          <span>${calculateCurrentPrice(cartProducts, quantities)}</span>
         </div>
-        <button onClick={checkoutHandler}>CHECKOUT</button>
+        <button onClick={handleCheckout}>CHECKOUT</button>
       </div>
     </div>
   );
