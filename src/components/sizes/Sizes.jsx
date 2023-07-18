@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import "./Sizes.scss";
 import { handleSizeButtonClick, isSizeSelected } from "./Size";
 
-function Sizes({ selectedSizes, onSizeToggle }) {
+const Sizes = memo(({ selectedSizes, onSizeToggle }) => {
   const sizes = ["XS", "S", "M", "ML", "L", "XL", "XXL"];
 
   return (
@@ -24,6 +24,6 @@ function Sizes({ selectedSizes, onSizeToggle }) {
       <p className="company-name">Re:Educate</p>
     </>
   );
-}
+});
 
-export default Sizes;
+export default memo(Sizes);

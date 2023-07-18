@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, memo } from "react";
 import { ProductContext } from "./ProductContext";
 import "./Main.scss";
 import Sizes from "../sizes/Sizes";
 import { handleSizeToggle, filteredProducts } from "./Main";
 
-function Main({ addToCart }) {
+const Main = memo(({ addToCart }) => {
   const products = useContext(ProductContext);
   const [selectedSizes, setSelectedSizes] = useState([]);
 
@@ -55,6 +55,6 @@ function Main({ addToCart }) {
       </div>
     </>
   );
-}
+});
 
-export default Main;
+export default memo(Main);

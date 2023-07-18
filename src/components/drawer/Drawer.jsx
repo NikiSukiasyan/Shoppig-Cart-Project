@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import "./Drawer.scss";
 import CartImage from "../../images/cartImage.png";
 import {
@@ -9,7 +9,7 @@ import {
   calculateCurrentPrice,
 } from "./Drawer.js";
 
-function Drawer({ cartProducts, setCartProducts }) {
+const Drawer = memo(({ cartProducts, setCartProducts }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [quantities, setQuantities] = useState([]);
 
@@ -117,6 +117,6 @@ function Drawer({ cartProducts, setCartProducts }) {
       </div>
     </div>
   );
-}
+});
 
-export default Drawer;
+export default memo(Drawer);
