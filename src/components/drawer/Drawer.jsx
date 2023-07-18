@@ -14,12 +14,7 @@ function Drawer({ cartProducts, setCartProducts }) {
   }, [cartProducts]);
 
   const initializeQuantities = () => {
-    const initialQuantities = cartProducts.map((product) => {
-      const existingQuantity = quantities.find(
-        (quantityProduct) => quantityProduct.id === product.id
-      );
-      return existingQuantity ? existingQuantity.quantity : 1;
-    });
+    const initialQuantities = cartProducts.map((product) => product.quantity);
     setQuantities(initialQuantities);
   };
 
@@ -62,6 +57,14 @@ function Drawer({ cartProducts, setCartProducts }) {
     return totalPrice.toFixed(2);
   };
 
+  const checkoutHandler = () => {
+    if (cartProducts.length === 0) {
+      alert("დაამატეთ პროდუქტები კალათაში :)");
+    } else {
+      const totalPrice = calculateCurrentPrice();
+      alert(`სულ გადასახდელია $${totalPrice}`);
+    }
+  };
   return (
     <div className={`drawer ${isOpen ? "open" : ""}`}>
       <div className="cart-count">
@@ -122,7 +125,7 @@ function Drawer({ cartProducts, setCartProducts }) {
           <p>SUBTOTAL</p>
           <span>${calculateCurrentPrice()}</span>
         </div>
-        <button>CHECKOUT</button>
+        <button onClick={checkoutHandler}>CHECKOUT</button>
       </div>
     </div>
   );

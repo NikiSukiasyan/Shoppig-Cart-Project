@@ -7,7 +7,15 @@ function App() {
   const [cartProducts, setCartProducts] = useState([]);
 
   const addToCart = (product) => {
-    setCartProducts([...cartProducts, product]);
+    const existingProduct = cartProducts.find((p) => p.id === product.id);
+    if (existingProduct) {
+      const updatedCartProducts = cartProducts.map((p) =>
+        p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p
+      );
+      setCartProducts(updatedCartProducts);
+    } else {
+      setCartProducts([...cartProducts, { ...product, quantity: 1 }]);
+    }
   };
 
   return (
