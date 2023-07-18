@@ -46,6 +46,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".90",
       orPrice: " 9 x1.21",
       sizes: ["XXL", "XL", "L"],
+      description: "White T-shirt",
     },
     {
       id: 2,
@@ -56,6 +57,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".25",
       orPrice: " 3 x4.42",
       sizes: ["L", "ML"],
+      description: "Wine",
     },
     {
       id: 3,
@@ -66,6 +68,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".90",
       orPrice: " 12 x2.16",
       sizes: ["XL"],
+      description: "Tony Hawk",
     },
     {
       id: 4,
@@ -76,6 +79,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".45",
       orPrice: " 5 x5.89",
       sizes: ["ML", "M"],
+      description: "Tule",
     },
     {
       id: 5,
@@ -86,6 +90,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".90",
       orPrice: " 9 x1.21",
       sizes: ["S", "XS"],
+      description: "Really Cool T-shirt",
     },
     {
       id: 6,
@@ -96,6 +101,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".00",
       orPrice: " 3 x3.00",
       sizes: ["XL", "L"],
+      description: "Mark Zuck have 365 of this",
     },
     {
       id: 7,
@@ -115,6 +121,7 @@ export const ProductProvider = ({ children }) => {
       price: "10.90",
       orPrice: " 9 x1.21",
       sizes: ["XXL", "XL", "L"],
+      description: "White T-shirt",
     },
     {
       id: 9,
@@ -125,6 +132,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".90",
       orPrice: " 7 x2.13",
       sizes: ["L"],
+      description: "You will like this one",
     },
     {
       id: 10,
@@ -135,6 +143,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".90",
       orPrice: " 7 x2.13",
       sizes: ["L"],
+      description: "Adidas originals",
     },
     {
       id: 11,
@@ -145,6 +154,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".90",
       orPrice: " 9 x1.21",
       sizes: ["XL", "L"],
+      description: "Cowabunga!",
     },
     {
       id: 12,
@@ -155,6 +165,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".90",
       orPrice: " 9 x5.44",
       sizes: ["XXL", "XL"],
+      description: "When you wish well",
     },
     {
       id: 13,
@@ -165,6 +176,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".50",
       orPrice: " 4 x5.63",
       sizes: ["S"],
+      description: "Very comfy",
     },
     {
       id: 14,
@@ -175,6 +187,7 @@ export const ProductProvider = ({ children }) => {
       cents: ".70",
       orPrice: " 4 x4.67",
       sizes: ["XL"],
+      description: "Girl the future is all your",
     },
     {
       id: 15,

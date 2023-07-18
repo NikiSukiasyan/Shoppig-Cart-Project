@@ -4,7 +4,7 @@ import "./Main.scss";
 import Sizes from "../sizes/Sizes";
 import { handleSizeToggle, filteredProducts } from "./Main";
 
-function Main() {
+function Main({ addToCart }) {
   const products = useContext(ProductContext);
   const [selectedSizes, setSelectedSizes] = useState([]);
 
@@ -47,7 +47,9 @@ function Main() {
                 </span>
               )}
             </div>
-            <button className="add-btn">Add To Cart</button>
+            <button className="add-btn" onClick={() => addToCart(product)}>
+              Add To Cart
+            </button>
           </div>
         ))}
       </div>
